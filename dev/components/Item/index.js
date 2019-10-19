@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 
-import Button from './../../components/Button';
+import Button from '../Button';
 
 class Item extends Component{
     render() {
+        const {author, message} = this.props;
         return(
             <li className="item">
                 <header className="item__head">
-                    <h3 className="item__title">{this.props.name}</h3>
+                    <h3 className="item__title">{author}</h3>
                     <div className="item__action">
                         <Button text={'edit'} />
                         <Button text={'delete'} />
                     </div>
                 </header>
-                <p>{this.props.message}</p>
+                <p>{message}</p>
             </li>
         );
     }
